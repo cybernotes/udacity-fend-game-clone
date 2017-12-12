@@ -99,11 +99,11 @@ Player.prototype.rest = function() {
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
-var allEnemies = {
+var allEnemies = [
   bug1 = new Enemy(0, 100, 100),
   bug2 = new Enemy(0, 250, 150),
   bug3 = new Enemy(0, 150, 130)
-};
+];
 allEnemies.push(bug1, bug2, bug3);
 var player = new Player(200, 415);
 
