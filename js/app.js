@@ -20,11 +20,8 @@ Enemy.prototype.update = function(dt) {
   // which will ensure the game runs at the same speed for
   // all computers.
   this.x += this.speed * dt;
-  this.xOffscreen = 504;
-  this.startX = -90;
-  if (this.x >= this.xoffscreen) {
-    this.x = this.startX;
-    this.randomSpeed();
+  if (this.x >= 505) {
+    this.x = 1;
   }
 
   this.checkCollision();
@@ -62,15 +59,16 @@ Player.prototype.handleInput = function(pressKey) {
       this.x -= 101;
       break;
     case 'up':
-      this.x += 83;
+      this.y -= 83;
       break;
-    case 'rght':
+    case 'right':
       this.x += 101;
       break;
     case 'down':
       this.y += 83;
       break;
-  };
+  }
+
   if (this.x > 400) {
     this.x = 400;
   };
@@ -95,7 +93,7 @@ Enemy.prototype.checkCollision = function() {
   };
 };
 
-Player.prototype.rest = function() {
+Player.prototype.reset = function() {
   'use strict';
   this.x = 200;
   this.y = 415;
