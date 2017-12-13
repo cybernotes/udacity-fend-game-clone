@@ -46,7 +46,10 @@ var Player = function(x, y, speed) {
   this.width = 40;
   this.sprite = 'images/char-boy.png';
 };
-
+Player.prototype.render = function() {
+  "use strict";
+  ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+};
 Player.prototype.update = function(dt) {
   'use strict';
   ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
@@ -91,6 +94,7 @@ Enemy.prototype.checkCollision = function() {
     player.reset();
   };
 };
+
 Player.prototype.rest = function() {
   'use strict';
   this.x = 200;
